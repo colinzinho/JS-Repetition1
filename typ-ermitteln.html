@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title></title>
+        
+        <script>
+            class Fahrzeug
+            {
+                constructor(f, g)
+                {
+                    this.farbe = f;
+                    this.geschwindigkeit = g;
+                }
+
+                beschleunigen(wert)
+                {
+                    this.geschwindigkeit += wert;
+                }
+
+                lackieren(f)
+                {
+                    this.farbe = f;
+                }
+
+                toString()
+                {
+                    return "Farbe: " + this.farbe + ", Geschwindigkeit: " + this.geschwindigkeit;
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h2>Typermittlung</h2>
+        <p><em>typeof</em>-Operator</p>
+        <p>
+            <script>
+                const dacia = new Fahrzeug("Rot", 50);
+                //Typprüfungen
+                const tClass = typeof Fahrzeug;
+                const tObj = typeof dacia;
+                const tMet = typeof dacia.beschleunigen;
+                const tEig = typeof dacia.farbe;
+                const tEig2 = typeof dacia.geschwindigkeit;
+                document.write("<p>Folgende Elemente werden untersucht:</p>" + 
+                                    "<details><summary>Klasse</summary><p>" + tClass + "</p></details>" + 
+                                    "<details><summary>Objekt</summary><p>" + tObj + "</p></details>" +
+                                    "<details><summary>Methode</summary><p>" + tMet + "</p></details>" +
+                                    "<details><summary>Eigenschaft#1</summary><p>" + tEig + "</p></details>"+
+                                    "<details><summary>Eigenschaft#2</summary><p>" + tEig2 + "</p></details>");
+
+            </script>
+        </p>
+    </body>
+</html>

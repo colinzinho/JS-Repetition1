@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title></title>
+        
+        <script>
+            //Erste Klasse [Fahrzeug]
+            class Fahrzeug
+            {
+                constructor(f, g)
+                {
+                    this.farbe = f;
+                    this.geschwindigkeit = g;
+                }
+
+                beschleunigen(wert)
+                {
+                    this.geschwindigkeit += wert;
+                }
+
+                lackieren(f)
+                {
+                    this.farbe = f;
+                }
+
+                toString()
+                {
+                    return "Farbe: " + this.farbe + ", Geschwindigkeit: " + this.geschwindigkeit;
+                }
+            }
+            //Zweite Klasse [Flugzeug]
+            class Flugzueg
+            {
+                constructor(f, g)
+                {
+                    this.farbe = f;
+                    this.geschwindigkeit = g;
+                }
+
+                beschleunigen(wert)
+                {
+                    this.geschwindigkeit += wert;
+                }
+
+                lackieren(f)
+                {
+                    this.farbe = f;
+                }
+
+                toString()
+                {
+                    return "Farbe: " + this.farbe + ", Geschwindigkeit: " + this.geschwindigkeit;
+                }
+            }
+
+
+            function isInstanceOf(obj, c)
+            {
+                //Prüfen, ob das Objekt [obj] eine Instanz der Klasse [c] ist
+                if(obj instanceof c)
+                {
+                    document.write("Ist Instanz");
+                }else
+                {
+                    document.write("Ist keine Instanz");
+                }
+            }
+
+            
+        </script>
+    </head>
+
+    <body>
+        <h2>Instanzen prüfen</h2>
+        <p>Mithilfe des <em>instanceof</em>-Operator</p>
+        <p>
+            <script>
+                const dacia = new Fahrzeug("Rot", 50);
+                isInstanceOf(dacia, Fahrzeug);
+                document.write("<br><br>");
+
+                //Ein Flugzueg instanziieren
+                const airbus = new Flugzueg("Weiss", 300);
+                isInstanceOf(airbus, Fahrzeug);
+            </script>
+        </p>
+    </body>
+</html>

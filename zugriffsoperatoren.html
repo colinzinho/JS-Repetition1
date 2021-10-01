@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title></title>
+        
+        <script>
+            class Fahrzeug
+            {
+                constructor(f, g)
+                {
+                    this.farbe = f;
+                    this.geschwindigkeit = g;
+                }
+
+                beschleunigen(wert)
+                {
+                    this.geschwindigkeit += wert;
+                }
+
+                lackieren(f)
+                {
+                    this.farbe = f;
+                }
+
+                toString()
+                {
+                    return "Farbe: " + this.farbe + ", Geschwindigkeit: " + this.geschwindigkeit + ", Antrieb: " + this.antrieb;
+                }
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <h2>Zugriffsoperatoren</h2>
+        <p>...</p>
+        <p>
+            <script>
+                const dacia = new Fahrzeug("Rot", 50);
+                //Ausgeben der Farbe - Variante 1
+                document.write("Variante mit dem Punkt-Operator '.': " + dacia.farbe + "<br>");
+
+
+                //Ausgeben der Farbe - mithilfe rechteckigen Klammern
+                document.write("Variante mit den rechteckigen Klammern '[]': " + dacia["farbe"]);
+
+
+            </script>
+        </p>
+    </body>
+</html>

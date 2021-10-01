@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title></title>
+        
+        <script>
+            class Fahrzeug
+            {
+                constructor(f, g)
+                {
+                    this.farbe = f;
+                    this.geschwindigkeit = g;
+                }
+
+                beschleunigen(wert)
+                {
+                    this.geschwindigkeit += wert;
+                }
+
+                lackieren(f)
+                {
+                    this.farbe = f;
+                }
+
+                toString()
+                {
+                    return "Farbe: " + this.farbe + ", Geschwindigkeit: " + this.geschwindigkeit;
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Eigenschaft löschen</h1>
+        <p>Eigenschaften können mithilfe des <em>delete</em>-Operators gelöscht werden.</p>
+        <p>
+            <script>
+                const dacia = new Fahrzeug("Rot", 50);
+                document.write(dacia + "<br>");
+
+                //Wir löschen die Eigenschaft [geschwindigkeit] raus, da es keine Geschwindigkeitskontrollen mehr gibt :D
+                delete dacia.geschwindigkeit;
+                document.write(dacia);
+
+            </script>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title></title>
+        
+        <script>
+            /*Klassen werden im [Head-Bereich] einer Webseite definiert
+             *In diesem Beispiel erstellen wir eine Klasse [Fahrzeug]
+             *
+             *Nach dem Klassennamen folgen KEINE runden Klammern
+             */
+            class Fahrzeug
+            {
+                //Operator für private
+                #farbe;
+                constructor(f, g)
+                {
+                    this.#farbe = f;
+                    this.geschwindigkeit = g;
+                }
+
+                beschleunigen(wert)
+                {
+                    this.geschwindigkeit += wert;
+                }
+
+                lackieren(f)
+                {
+                    this.#farbe = f;
+                }
+
+                toString()
+                {
+                    return "Farbe: " + this.#farbe + ", Geschwindigkeit: " + this.geschwindigkeit;
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h2>Klassen in der neuen Schreibweise</h2>
+        <p>Klassen, Konstruktoren, Methoden, Eigenschaften</p>
+        <p>
+            <script>
+                //Eine konstante Variable '' mit dem Verweis auf ein Fahzeug-Objekt
+                const dacia = new Fahrzeug("Grün", 50);
+                document.write(dacia + "<br>");
+                //Zugriff auf die Eigenschaften des Objekts der Klasse [Fahrzeug] - und das trotz der konstanten Variable
+                dacia.farbe = "Rot";
+                document.write(dacia + "<br>");
+
+                dacia.beschleunigen(25);
+                document.write(dacia + "<br>");
+
+                //Nur als Wunschvorstellung ist es möglich, aus dem [dacia] einen Porsche zu machen.
+                dacia = new Fahrzeug("Weiss", 250); //<-- meldet einen Fehler
+                document.write(dacia);
+
+            </script>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title></title>
+        
+        <script>
+
+            class Fahrzeug
+            {
+                constructor(f, g, a)
+                {
+                    this.farbe = f;
+                    this.geschwindigkeit = g;
+                    this.antrieb = a;
+                }
+
+                beschleunigen(wert)
+                {
+                    this.geschwindigkeit += wert;
+                }
+
+                lackieren(f)
+                {
+                    this.farbe = f;
+                }
+
+                toString()
+                {
+                    return "Farbe: " + this.farbe + ", Geschwindigkeit: " + this.geschwindigkeit + ", Antrieb: " + this.antrieb;
+                }
+            }
+
+            class Motor
+            {
+                constructor(l, z, k)
+                {
+                    this.leistung = l;
+                    this.zylinder = z;
+                    this.kraftstoff = k;
+                }
+
+                tunen(wert)
+                {
+                    this.leistung += wert;
+                }
+
+                toString()
+                {
+                    return "Leistung: " + this.leistung + ", Zylinder: " + this.zylinder + ", Kraftstoff: " + this.kraftstoff;
+                }
+
+
+            }
+
+            class Lastwagen extends Fahrzeug
+            {
+                constructor(f, g, a, n)
+                {
+                    /*Werden an die Parent-Klasse gereicht
+                     *Methode super
+                     */
+                    super(f, g, a);
+                    this.nutzlast = n;
+                }
+
+                beladen(wert)
+                {
+                    this.nutzlast += wert;
+                }
+
+                //Methode aus der Parent-Klasse [Fahrzeug] - wird überschrieben
+                toString()
+                {
+                    /*Schlüsselwort super
+                     *      !!Nie die Klammern vergessen!! 
+                     */
+                    return super.toString() + ", Nutzlast: " + this.nutzlast + "KG";
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h2>Vererbung in JavaScript</h2>
+        <p>Das Schlüsselwort <em>extends</em></p>
+        <p>
+            <script>
+                const iveco = new Lastwagen("Rot", 50, new Motor(500, 8, "Diesel"), 2500);
+                document.write(iveco);
+
+            </script>
+        </p>
+    </body>
+</html>

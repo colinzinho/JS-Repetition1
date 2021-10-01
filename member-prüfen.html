@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title></title>
+        
+        <script>
+            //Member einer Klasse sind alle Eigenschaften und Methoden
+            class Fahrzeug
+            {
+                constructor(f, g)
+                {
+                    this.farbe = f;
+                    this.geschwindigkeit = g;
+                }
+
+                beschleunigen(wert)
+                {
+                    this.geschwindigkeit += wert;
+                }
+
+                lackieren(f)
+                {
+                    this.farbe = f;
+                }
+
+                toString()
+                {
+                    return "Farbe: " + this.farbe + ", Geschwindigkeit: " + this.geschwindigkeit;
+                }
+            }
+
+            function isMember(memb, root)
+            {
+                if(memb in root)
+                {
+                    return "Returned Value: " + true;
+                }else
+                {
+                    return "Returned Value: " + false;
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Member prüfen</h1>
+        <p>Member einer Klasse sind alle Eigenschaften und Methoden</p>
+        <p>
+            <script>
+                const dacia = new Fahrzeug("Rot", 50);
+                /*Prüfen, ob die Eigenschaft [farbe] Member des Objekts [dacia] der Klasse [Fahrzeug] ist
+                 *Der zu prüfende Wert wird als Zeichenkette übergeben - auch Methodennamen!!
+                 */
+                let isMemb = isMember("farbe", dacia);
+                document.write(isMemb + "<br>");
+
+                //Jetzt wollen wir noch prüfen, ob die Methode [beschleunigen] Member des Objekts [dacia] der Klasse [Fahrzeug] ist
+                isMemb = isMember("beschleunigen", dacia)
+                document.write(isMemb + "<br>");
+
+                //Letzter Aufruf prüft, ob die Methode [bremsen] Member des Objekts [dacia] der Klasse [Fahrzeug] ist
+                isMemb = isMember("bremsen", dacia)
+                document.write(isMemb + "<br>");
+
+            </script>
+        </p>
+    </body>
+</html>

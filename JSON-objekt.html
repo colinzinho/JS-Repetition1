@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title></title>
+        
+        <script>
+            class Fahrzeug
+            {
+                constructor(f, g)
+                {
+                    this.farbe = f;
+                    this.geschwindigkeit = g;
+                }
+
+                beschleunigen(wert)
+                {
+                    this.geschwindigkeit += wert;
+                }
+
+                lackieren(f)
+                {
+                    this.farbe = f;
+                }
+
+                toString()
+                {
+                    return "Farbe: " + this.farbe + ", Geschwindigkeit: " + this.geschwindigkeit;
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h2>Das JSON-Objekt</h2>
+        <p>In JavaScript gibt es ein vordefiniertes Objekt mit dem Namen <em>JSON - folgende Methoden sind von Bedeutung</em></p>
+        <ul>
+            <li><p>stringify(obj)</p></li>
+            <li><p>parse(zkette)</p></li>
+        </ul>
+        <p>
+            <script>
+                const dacia = new Fahrzeug("Rot", 50);
+                //Umwandlung in eine transportable Zeichenkette
+                const zkette = JSON.stringify(dacia);
+                document.write(zkette + "<br>");
+
+                //Rückumwandlung
+                const obj = JSON.parse(zkette);
+                document.write(obj.farbe + " " + obj.geschwindigkeit);
+            </script>
+        </p>
+    </body>
+</html>
